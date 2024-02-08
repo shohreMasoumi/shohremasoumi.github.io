@@ -1,30 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Shohre Masoumi</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('man_and_the_sea.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shohre Masoumi</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #5f6368;
+        }
+
+        .header {
+            background: #fff;
+            height: 60px;
+            justify-content: flex-start;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            transform: translateY(0);
+            transition: transform .15s ease-out;
+            z-index: 10;
+            align-items: center;
+            display: flex;
+            flex-flow: row nowrap;
+            padding: 0px 40px; /* Added padding to the top/bottom and left/right */
+        }
+
+        .header-shadow {
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 5px 0 rgba(0,0,0,.23);
+        }
+
+        .header > a {
+            display: inline;
+            text-decoration: none; /* Remove underline */
+            color: #5f6368;
+            padding: 10px;
+        }
+
+        .header a:hover {
+            color: #000; /* Change link color on hover */
+        }
+
+        .container-fluid {
+            padding-top: 80px;
+        }
+
+        .profile-card, .post {
+            min-width: 200px; /* Adjust the value according to your preference */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .profile-card .card-img-top, .post .card-img-top {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .profile-card .card-body p, .post .card-body p {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 1000px) {
+            .col-md-3, .col-md-9 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+
+        .parallax-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .parallax-image img {
+            width: 100%;
+            height: auto;
+            transform: translateZ(0); /* Ensures proper rendering in some browsers */
+        }
+
+        .post img {
+            max-height: 400px;
+            height: auto; /* Ensures the image maintains its aspect ratio */
+        }
+
+        .post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the container while maintaining aspect ratio */
+            transition: transform 0.5s ease; /* Smooth transition for zoom effect */
+        }
+
+        .profile-card .card-img-top,
+        .post .card-img-top {
+            height: 400px; /* Set a fixed height for both images */
+            object-fit: cover; /* Maintain aspect ratio */
+            width: 100%; /* Ensure both images fill the container */
+        }
+
+    </style>
 </head>
 <body>
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    Shohre Masoumi
-  </div>
-  <div class="w3-display-middle">
-    <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1>
-  </div>
+<header class="header header-shadow" data-component="uni-header" aria-hidden="false">
+    <a href="index.html" style="margin-right: 35px;">Shohre Masoumi</a>
+
+    <!--
+    <a href="index.html" style="color:  #000">Home</a>
+    <a href="about.html">About</a>
+    -->
+
+</header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" style="padding: 5px">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="profile-card">
+                        <img src="images/hero-12.jpeg" class="card-img-top" alt="Profile Picture">
+                        <div class="card-body">
+                            <h5>Shohre Masoumi</h5>
+                            <p><i class="fa-solid fa-wand-magic-sparkles"></i> I adore style,<br><i class="fa-solid fa-laptop"></i> work in tech,<br><i class="fa-solid fa-campground"></i> love to travel,<br><i class="fa-brands fa-canadian-maple-leaf"></i> live in Vancouver.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div style="max-width: 800px;">
+                        <div class="post">
+                                <img src="images/umbrella-full.jpg" class="card-img-top" alt="Profile Picture">
+                            <div class="card-body">
+                                <h5>Let It Begin</h5>
+                                <p>Hi everyone, ready for a great time? </p>
+                                <p>I'm Shohre. I was born an raised in Iran. 2019, I came to Vancouver Canada in pursued of a Masters Degree in Computer Science. Join me as I share my experiences, insights, and discoveries on this academic and cultural adventures!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
 </div>
 
 </body>
